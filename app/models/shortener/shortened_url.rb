@@ -10,7 +10,7 @@ class Shortener::ShortenedUrl
   index({ unique_key: 1 }, { unique: true })
 
   URL_PROTOCOL_HTTP = "http://"
-  REGEX_LINK_HAS_PROTOCOL = Regexp.new('\Ahttp:\/\/|\Ahttps:\/\/', Regexp::IGNORECASE)
+  REGEX_LINK_HAS_PROTOCOL = ::Regexp.new('\Ahttp:\/\/|\Ahttps:\/\/', ::Regexp::IGNORECASE)
 
   validates :url, :presence => true, :uniqueness => true
   validates :unique_key, :uniqueness => true
